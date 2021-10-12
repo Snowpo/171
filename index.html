@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Card</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src= "https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src= "js/markerHandler.js"></script>
+  <script src= "https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src= "https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src= "https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <script src= "js/createMarker.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- Local StyleSheet -->
+  <link href="./style.css" rel="stylesheet" />
+
+  <script >
+    // Import the functions you need from the SDKs you need
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBKVi7mMf7etQBeYJWLOMjB171JFlop-WY",
+      authDomain: "food-app-ec3ec.firebaseapp.com",
+      projectId: "food-app-ec3ec",
+      storageBucket: "food-app-ec3ec.appspot.com",
+      messagingSenderId: "1055652144011",
+      appId: "1:1055652144011:web:88f1d410af6af4dbd8858e"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <!--JS Files-->
+  <script src="./js/addButtons.js"></script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene id="main-scene" vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+    sourceWidth:1280; sourceHeight:960; 
+    displayWidth: 1280; displayHeight: 960; 
+    debugUIEnabled: false;" gesture-detector create-buttons create-marker>
+
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+
+
+    
+  </a-scene>
+
+  <!-- Button Main Div -->
+  <div id="button-div"></div>
+
+</body>
+
+</html>
